@@ -2,19 +2,20 @@ import { useForm } from "react-hook-form";
 import { InputText } from "../components/ui/InputText";
 import { InputPassword } from "../components/ui/InputPassword";
 
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import Button from "../components/ui/Button";
 
+
+
 type FormData = {
-    nama: string;
     email: string;
     password: string;
     password_confirm: string;
 };
 
 const schema = z.object({
-    nama: z.string().min(1, "Nama harus diisi"),
     email: z.string().min(1, "isi bol"),
     password: z.string().min(8, "kie juga"),
     password_confirm: z.string().min(8, "Password tidak sesuai"),
@@ -36,13 +37,6 @@ export default function RegisterForm() {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <InputText
-                    label="Nama"
-                    nama="nama"
-                    register={register}
-                    error={errors.nama?.message}
-                />
-
                 <InputText
                     label="Email"
                     nama="email"

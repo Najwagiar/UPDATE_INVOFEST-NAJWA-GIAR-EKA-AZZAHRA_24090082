@@ -5,6 +5,7 @@ import { InputPassword } from "../components/ui/InputPassword";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import Button from "../components/ui/Button";
+import DaftarForm from "./DaftarForm";
 
 const schema = z.object({
     email: z.string().email({ message: "Email harus diisi dengan benar" }),
@@ -52,6 +53,9 @@ export default function LoginForm() {
                     <Button label="Login" variant="primary"/>
                 </div>
             </form>
+            <div style={{marginTop: "80px"}}>
+                <DaftarForm/>
+            </div>
         </div>
     );
 }
