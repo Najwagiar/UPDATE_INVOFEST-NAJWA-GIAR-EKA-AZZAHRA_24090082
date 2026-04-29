@@ -5,7 +5,6 @@ import { InputPassword } from "../components/ui/InputPassword";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import Button from "../components/ui/Button";
-import DaftarForm from "./DaftarForm";
 import { Link } from "react-router-dom";
 
 const schema = z.object({
