@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import Button from "../components/ui/Button";
 import DaftarForm from "./DaftarForm";
+import { Link } from "react-router-dom";
 
 const schema = z.object({
     email: z.string().email({ message: "Email harus diisi dengan benar" }),
@@ -52,10 +53,14 @@ export default function LoginForm() {
                 <div>
                     <Button label="Login" variant="primary"/>
                 </div>
+
+                <div>
+                    Belum punya akun? <Link to="/register">Daftar Disini</Link>
+                </div>
             </form>
-            <div style={{marginTop: "80px"}}>
+            {/* <div style={{marginTop: "80px"}}>
                 <DaftarForm/>
-            </div>
+            </div> */}
         </div>
     );
 }
